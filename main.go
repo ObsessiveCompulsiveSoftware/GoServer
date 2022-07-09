@@ -20,19 +20,25 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, "app/public/index.html")
 }
 
-func wsEndpoint(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Somebody opened a socket!")
+func globalJs(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("/global.js served")
+	http.ServeFile(w, r, "app/public/global.js")
+}
+
+func strawEndpoint(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Straw opened!")
 	fmt.Fprintf(w, "Hello World")
 }
 
 func setupRoutes() {
 	http.HandleFunc("/", homePage)
-	http.HandleFunc("/ws", wsEndpoint)
+	http.HandleFunc("/global.js", globalJs)
+	http.HandleFunc("/straw", strawEndpoint)
 }
 
 func main() {
 	fmt.Println("SERVER is starting...")
 	setupRoutes()
 	log.Fatal(http.ListenAndServe(":8080", nil))
-	fmt.Println("SERVER started successfully.")
+	//fmt.Println("SERVER started successfully.")
 }
