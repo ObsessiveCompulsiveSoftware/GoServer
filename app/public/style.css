@@ -1,0 +1,9 @@
+.success {
+  color: rgba(54, 179, 0, .9);
+}
+.warning {
+  color: rgba(255, 165, 0, .9);
+}
+.danger {
+  color: rgba(208, 0, 0, .9);
+}
