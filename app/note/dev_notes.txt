@@ -1,0 +1,4 @@
+Today is Tuesday 9th August 2022.
+1. Created `dev_notes.txt`.
+2. Need to try creating an items table in go and setup a basic CRUD using the UI.
+3. Then, create an item_attrs table for holding values for each item, with a validFrom and validTo millisecond stamp.
